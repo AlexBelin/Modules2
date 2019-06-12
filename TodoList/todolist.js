@@ -44,10 +44,13 @@ function TodoListSys(TodoListID, InputTargetID){
     }
 
     this.AddItem = function(){
-        var _NewItem = new TodoListItem(this.LabelTodoInput.value, this);
-        _NewItem.MakeItem();
-        this.ItemList.push(_NewItem);
-        this.UpdateItemsList();
+        var _TempInput = this.LabelTodoInput.value.replace(' ', '');
+        if(_TempInput != ''){
+            var _NewItem = new TodoListItem(this.LabelTodoInput.value, this);
+            _NewItem.MakeItem();
+            this.ItemList.push(_NewItem);
+            this.UpdateItemsList();
+        }
     };
 
     this.UpdateItemsList = function(){
@@ -71,13 +74,11 @@ function TodoListSys(TodoListID, InputTargetID){
     };
 
     this.RebuildList = function(){
-        if(this.Input.value != ''){
-            var _TempArray = this.Input.value.split(', ');
-            for(var i = 0 ; i < _TempArray.length ; i++){
-                this.LabelTodoInput.value = _TempArray[i];
-                this.AddItem();
-            }
-            this.LabelTodoInput.value = '';
+        var _TempArray = this.Input.value.split(', ');
+        for(var i = 0 ; i < _TempArray.length ; i++){
+            this.LabelTodoInput.value = _TempArray[i];
+            this.AddItem();
         }
+        this.LabelTodoInput.value = '';
     };
 }
