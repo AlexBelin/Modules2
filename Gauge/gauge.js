@@ -13,7 +13,7 @@ function GaugeElem(ElemLabel, GaugeSys){
 
     this.MoveCursor = function(){
         var _XDisplacement = this.LabelDOM.getBoundingClientRect().left + (this.LabelDOM.getBoundingClientRect().width / 2) - this.GaugeSys.Gauge.getBoundingClientRect().left;
-        this.GaugeSys.Cursor.style.left = _XDisplacement + 'px';
+        this.GaugeSys.Cursor.style.left = ((_XDisplacement * 100) / this.GaugeSys.Gauge.getBoundingClientRect().width) + '%';
         this.GaugeSys.Input.value = this.ElemLabel;
     };
 }
