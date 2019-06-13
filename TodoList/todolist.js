@@ -44,13 +44,15 @@ function TodoListSys(TodoListID, InputTargetID){
     }
 
     this.AddItem = function(){
-        var _TempInput = this.LabelTodoInput.value.replace(' ', '');
+        var _TempInput = this.LabelTodoInput.value.replace(/ /g, '');
         if(_TempInput != ''){
             var _NewItem = new TodoListItem(this.LabelTodoInput.value, this);
             _NewItem.MakeItem();
             this.ItemList.push(_NewItem);
             this.UpdateItemsList();
         }
+        this.LabelTodoInput.value = '';
+        this.LabelTodoInput.innerHTML = '';
     };
 
     this.UpdateItemsList = function(){
