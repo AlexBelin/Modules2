@@ -29,7 +29,7 @@ function TodoListItem(Label, TodoListSys){
     };
 
     this.SetItemLabelWidth = function(){
-        this.ItemInput.style.width = (this.ItemInput.value.length * 8) + 'px';
+        this.ItemInput.style.width = (this.ItemInput.value.length * 5) + 15 + 'px';
     };
 
     this.DeleteItem = function(){
