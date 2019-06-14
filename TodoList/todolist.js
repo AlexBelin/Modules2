@@ -34,6 +34,7 @@ function TodoListSys(TodoListID, InputTargetID){
         this.TodoListInputContainer = document.createElement('div');
         this.TodoListInputContainer.classList.add('todolist-sys');
         this.LabelTodoInput = document.createElement('input');
+        this.LabelTodoInput.addEventListener('keyup', this.ValidationLabel.bind(this));
         this.LabelTodoAddButton = document.createElement('div');
         this.LabelTodoAddButton.classList.add('todolist-button');
         this.LabelTodoAddButton.addEventListener('click', this.AddItem.bind(this));
@@ -42,6 +43,12 @@ function TodoListSys(TodoListID, InputTargetID){
         this.TodoList.appendChild(this.TodoListInputContainer);
         this.RebuildList();
     }
+
+    this.ValidationLabel = function(event){
+        if(event.keyCode == 13){
+            this.AddItem();
+        }
+    };
 
     this.AddItem = function(){
         var _TempInput = this.LabelTodoInput.value.replace(/ /g, '');
