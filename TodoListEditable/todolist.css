@@ -100,3 +100,9 @@
 .handle-item:active{
     cursor: grabbing;
 }
+
+.item-moved{
+    box-shadow: -3px 3px 3px #333;
+    -moz-box-shadow: -3px 3px 3px #333;
+    -webkit-box-shadow: -3px 3px 3px #333;
+}

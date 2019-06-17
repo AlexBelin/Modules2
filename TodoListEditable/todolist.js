@@ -29,6 +29,7 @@ function TodoListItem(Label, TodoListSys){
     this.MouseDown = function(){
         this.TodoListSys.ItemClicked = this;
         this.Clicked = true;
+        this.Item.classList.add('item-moved');
     };
 
     this.MouseUp = function(){
@@ -38,6 +39,7 @@ function TodoListItem(Label, TodoListSys){
         this.Item.style.zIndex = '';
         this.Item.style.left = '';
         this.Item.style.top = '';
+        this.Item.classList.remove('item-moved');
         setTimeout(function(){
             _this.TodoListSys.SortList();
         }, 60);
