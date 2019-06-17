@@ -49,7 +49,7 @@ function TodoListItem(Label, TodoListSys){
             this.Item.style.position = 'absolute';
             this.Item.style.zIndex = '1000000';
             this.HandleItem.style.zIndex = '1000003';
-            this.Item.style.left = event.pageX - (this.Item.getBoundingClientRect().width / 3) + 'px';
+            this.Item.style.left = event.pageX - (this.Item.getBoundingClientRect().width / 2) + 'px';
             this.Item.style.top = event.pageY - (this.Item.getBoundingClientRect().height / 2) + 'px';
         }
     };
