@@ -36,7 +36,6 @@ function TodoListItem(Label, TodoListSys){
         var _this = this;
         this.Item.style.position = '';
         this.Item.style.zIndex = '';
-        this.HandleItem.style.zIndex = '';
         this.Item.style.left = '';
         this.Item.style.top = '';
         setTimeout(function(){
@@ -48,7 +47,6 @@ function TodoListItem(Label, TodoListSys){
         if(this.Clicked){
             this.Item.style.position = 'absolute';
             this.Item.style.zIndex = '1000000';
-            this.HandleItem.style.zIndex = '1000003';
             this.Item.style.left = event.pageX - (this.Item.getBoundingClientRect().width / 2) + 'px';
             this.Item.style.top = event.pageY - (this.Item.getBoundingClientRect().height / 2) + 'px';
         }
