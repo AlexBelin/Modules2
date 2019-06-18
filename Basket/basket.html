@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="basket.css" rel="stylesheet" media="screen" />
+
+</head>
+<body>
+    
+    <div id="basket-1" style="position: absolute; right: 200px; bottom: 200px; border:4px dashed red; width: 200px; height: 150px;"><input type="text" name="REGION" id="list" value="{REGION}"></div>
+    <div id="items-1">
+        <div item-label="Item 1">Item 1<p>lorem</p></div>
+        <div item-label="Item 2">Item 2<p>dolor</p></div>
+        <div item-label="Item 3">Item 3<p>ipsum</p></div>
+        <div item-label="Item 4">Item 4<p>amet</p></div>
+    </div>
+
+    
+    <script type="text/javascript" src="basket.js"></script>
+    <script type="text/javascript">
+        var basket1 = new BasketSys('basket-1', 'items-1', 'list');
+        basket1.ActivateBasket();
+    </script>
+</body>
+</html>
