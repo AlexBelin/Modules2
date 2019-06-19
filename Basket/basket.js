@@ -69,7 +69,9 @@ function Item(Element, BasketSys){
     this.DropItem = function(event){
         if(this.InDropZone(event)){
             this.BasketSys.Basket.appendChild(this.Element);
-            this.BasketSys.AddItem(this);
+            if(this.BasketSys.GetIndexOfElement(this) == -1){
+                this.BasketSys.AddItem(this);
+            }
         }
         else{
             this.BasketSys.Items.appendChild(this.Element);
@@ -90,10 +92,10 @@ function BasketSys(BasketID, ItemsID, InputTargetID){
     this.ActivateBasket = function(){
         this.Input.type = 'hidden';
         this.Basket.classList.add('basket-sys')
-        this.GetItems();
+        this.CreateItems();
     };
 
-    this.GetItems = function(){
+    this.CreateItems = function(){
         var _Items = this.Items.children;
         var _Item = null;
         for(var i = 0 ; i < _Items.length ; i++){
@@ -111,6 +113,18 @@ function BasketSys(BasketID, ItemsID, InputTargetID){
             }
         }
         this.Input.value = _Str;
+    };
+
+    this.GetIndexOfElement = function(_Element){
+        var _Index = -1;
+        var i = 0;
+        while((i < this.ItemsList.length) && (this.ItemsList[i] !== _Element)){
+            i++;
+        }
+        if(this.ItemsList[i] === _Element){
+            _Index = i;
+        }
+        return _Index;
     };
 
     this.AddItem = function(Item){
