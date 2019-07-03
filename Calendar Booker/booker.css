@@ -1,0 +1,97 @@
+:root{
+    --table-border: 1px solid #bbb;
+}
+
+.table-sys{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.table-sys .table-label{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.table-sys input{
+    display: none;
+}
+
+.table-sys .table-row{
+    font-size: 0;
+}
+
+.table-sys .table-cell{
+    height: 50px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-right: var(--table-border);
+    border-top: var(--table-border);
+}
+
+.table-sys .table-row:first-child .table-cell:first-child{
+    background-color: transparent;
+}
+
+.table-sys .table-row:nth-child(odd) .table-cell{
+    background-color: #ccc;
+}
+
+.table-sys .table-row:nth-child(even) .table-cell{
+    background-color: #eee;
+}
+
+.table-sys .table-row:first-child .table-cell{
+    background-color: #777;
+}
+
+.table-sys .table-row:first-child .table-cell .table-label{
+    color: #fff;
+}
+
+.table-sys .table-row:last-child .table-cell{
+    border-bottom: var(--table-border);
+}
+
+.table-sys .table-row .table-cell:first-child{
+    background-color: #777;
+    border-left: var(--table-border);
+}
+
+.table-sys .table-row .table-cell:first-child .table-label{
+    color: #fff;
+}
+
+.table-sys .table-row:first-child .table-cell:first-child{
+    border: none;
+}
+
+.table-sys-elem{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.table-sys-elem label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.table-sys-elem input[type="checkbox"]:checked + label{
+    background: #2e9aff;
+}
