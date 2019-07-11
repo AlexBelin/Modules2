@@ -6,6 +6,7 @@ function Item(Element, BasketSys){
     this.ItemLabel = null;
 
     this.MakeItem = function(){
+        this.Element.classList.add('item');
         this.ItemLabel = this.Element.getAttribute('item-label');
         this.ElementPosOrigine = this.Element.style.position;
         if((this.ElementPosOrigine == '') || (this.ElementPosOrigine == 'static')){
@@ -71,6 +72,11 @@ function Item(Element, BasketSys){
             this.BasketSys.Basket.appendChild(this.Element);
             if(this.BasketSys.GetIndexOfElement(this) == -1){
                 this.BasketSys.AddItem(this);
+                this.BasketSys.Basket.classList.add('basket-sys-dropped');
+                var _this = this;
+                setTimeout(function(){
+                    _this.BasketSys.Basket.classList.remove('basket-sys-dropped');
+                }, 200);
             }
         }
         else{

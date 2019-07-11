@@ -3,3 +3,39 @@
     -moz-box-shadow: -3px 3px 3px #333;
     -webkit-box-shadow: -3px 3px 3px #333;
 }
+
+.item{
+    padding: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #444;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    color: #fff;
+}
+
+.basket-sys{
+    padding: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #ddd;
+    width: 200px;
+    min-height: 150px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+.basket-sys-dropped{
+    animation: squishing 1s ease-in-out infinite alternate;
+    -moz-animation: squishing 1s ease-in-out infinite alternate;
+    -webkit-animation: squishing 1s ease-in-out infinite alternate;
+}
+
+@keyframes squishing {
+    10%, 40%, 80% {transform: scale(1, .9);}
+    0%, 30%, 60%, 100% {transform: scale(.9, 1);}
+}
