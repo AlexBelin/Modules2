@@ -31,10 +31,6 @@
     text-align: center;
 }
 
-.row-cells.hidden{
-    top: -150px;
-}
-
 .countdown-cell{
     display: inline-block;
     padding: 0 10px 40px 10px;
@@ -84,15 +80,6 @@
     -webkit-transition: all 0.3s;
 }
 
-@media screen and (min-width: 480px) {
-    .countdown-end-text.revealed{
-        top: 50%;
-        transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-    }
-}
-
 @media screen and (max-width: 479px) {
     .countdown-infos{
         height: 70px;
@@ -114,8 +101,5 @@
 
     .countdown-end-text{
         font-size: 24px;
-    }
-    .countdown-end-text.revealed{
-        top: 0;
     }
 }

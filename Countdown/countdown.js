@@ -53,8 +53,8 @@ function CountdownSys(ElemID, EndTime, TitleText, EndEventText){
         this.EndEvent.classList.add('countdown-end-text');
         this.EndEvent.appendChild(document.createTextNode(this.EndEventText));
 
-        var _ContentInfos = document.createElement('div');
-        _ContentInfos.classList.add('countdown-infos');
+        this.ContentInfos = document.createElement('div');
+        this.ContentInfos.classList.add('countdown-infos');
 
         this.RowCells = document.createElement('div');
         this.RowCells.classList.add('row-cells');
@@ -77,9 +77,9 @@ function CountdownSys(ElemID, EndTime, TitleText, EndEventText){
         this.RowCells.appendChild(this.Seconds.Cell);
         
         this.CountdownContainer.appendChild(this.Title);
-        _ContentInfos.appendChild(this.RowCells);
-        _ContentInfos.appendChild(this.EndEvent);
-        this.CountdownContainer.appendChild(_ContentInfos);
+        this.ContentInfos.appendChild(this.RowCells);
+        this.ContentInfos.appendChild(this.EndEvent);
+        this.CountdownContainer.appendChild(this.ContentInfos);
     };
 
     this.GetDuration = function(){
@@ -98,8 +98,10 @@ function CountdownSys(ElemID, EndTime, TitleText, EndEventText){
             _this.Seconds.UpdateElement(_seconds);
             if((_days <= 0) && (_hours <= 0) && (_minutes <= 0) && (_seconds < 1)){
                 clearInterval(_CountDown);
-                _this.EndEvent.classList.add('revealed');
-                _this.RowCells.classList.add('hidden');
+                //_this.EndEvent.classList.add('revealed');
+                //_this.RowCells.classList.add('hidden');
+                _this.RowCells.style.top = '-' + _this.CountdownContainer.getBoundingClientRect().height + 'px';
+                _this.EndEvent.style.top = (_this.ContentInfos.getBoundingClientRect().height / 2) - (_this.EndEvent.getBoundingClientRect().height / 2) + 'px';
             }
         }, 1000);
     };
