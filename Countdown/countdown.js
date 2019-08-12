@@ -98,8 +98,6 @@ function CountdownSys(ElemID, EndTime, TitleText, EndEventText){
             _this.Seconds.UpdateElement(_seconds);
             if((_days <= 0) && (_hours <= 0) && (_minutes <= 0) && (_seconds < 1)){
                 clearInterval(_CountDown);
-                //_this.EndEvent.classList.add('revealed');
-                //_this.RowCells.classList.add('hidden');
                 _this.RowCells.style.top = '-' + _this.CountdownContainer.getBoundingClientRect().height + 'px';
                 _this.EndEvent.style.top = (_this.ContentInfos.getBoundingClientRect().height / 2) - (_this.EndEvent.getBoundingClientRect().height / 2) + 'px';
             }
